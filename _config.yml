@@ -13,13 +13,13 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: DevOps with Docker
-email: jami.kousa@helsinki.fi
+title: Sysadmin with Docker
+email: Tero.Keso@Hamk.fi
 description: >- # this means to ignore newlines until "baseurl:"
-  University of Helsinki DevOps with Docker course.
+  Fork from University of Helsinki DevOps with Docker course.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://docker-hy.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  jakousa
+url: "https://hamk-sysadmin-docker.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
+github_username:  TeroKeso
 
 # Build settings
 markdown: kramdown
