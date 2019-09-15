@@ -6,6 +6,8 @@ permalink: /rocketchat/
 order: 0
 ---
 
+This part is subject to change.
+
 This part will let you try out your skills with docker. It will guide you towards launching a scalable production ready environment for Rocket.Chat. 
 
 # Setting up the virtual machine.
@@ -89,5 +91,13 @@ nginx.conf
     }
 ```
 
-Previous snippet will enable your server to listen on port 443 for connections. It will also determine where NGINX will write it's error logs. On top of this it has lots of arguments for SSL connection, including your certification path. More information can be found at [NGINX documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/). It also specifies a proxy pass for location "/". This means that all the requests ending in "https://<rooturl>/" will be redirected to the address specified in proxy_pass attribute. More information can be found [here](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
+Previous snippet will enable your server to listen on port 443 for connections. It will also determine where NGINX will write it's error logs. On top of this it has lots of arguments for SSL connection, including your certification path. More information can be found at [NGINX documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/). It also specifies a proxy pass for location "/". This means that all the requests ending in "https://rooturl/" will be redirected to the address specified in proxy_pass attribute. More information can be found [here](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
+
+# Docker-Compose
+
+[Rocket.chat github](https://github.com/RocketChat/Rocket.Chat/blob/develop/docker-compose.yml) provides us with a template. Docker-compose [file-reference](https://docs.docker.com/compose/compose-file/compose-file-v2/) could prove useful.
+
+Rocket.Chat docker-compose.yml contains multiple named services and their required parameters, mount paths etc.
+
+You should be able to run this compose file with docker-compose -d up. It will run the containers in a specified order based on the depends_on attributes.
