@@ -107,3 +107,23 @@ Previous snippet will enable your server to listen on port 443 for connections. 
 
 [NGINX documentation](https://nginx.org/en/docs/http/configuring_https_servers.html) contains more information.
 
+Now we will need to create a service for it. 
+
+```
+services:
+  nginx:
+    image: nginx
+    volumes:
+    - <config mount>
+    - <certificates mount>
+    ports:
+    - "443:443"
+```
+
+if we run `docker-compose up -d` now, we will have following situation:
+
+![]({{ "/images/4/overview-3.png" | absolute_url }})
+
+# Scaling
+
+We can scale the service similarly as in the exercise 2.5. Do that. Make sure it works. You can pause containers using `docker pause <container>`.
