@@ -8,21 +8,33 @@ order: 0
 
 This part is subject to change.
 
-This part will let you try out your skills with docker. It will guide you towards launching a scalable production ready environment for Rocket.Chat. 
+# The goal
 
-# Setting up the virtual machine.
+![]({{ "/images/4/overview.png" | absolute_url }})
+
+# Setting up the host.
 
 As usual, you will need to harden the host system.
-    [*] Create firewall rules
-    [*] Enable fail2ban
-    [*] Anything else?
 
-To run Docker images you will need to install the [Docker Engine](https://docs.docker.com/install/linux/docker-ce/#install-docker-engine---community). Follow the instructions (Ubuntu). 
+* Create firewall rules
+* Enable fail2ban
+* Anything else?
 
-You might also want to install [Docker-Compose](https://docs.docker.com/compose/install/). It is not necessary, but highly recommended.
+To run Docker images you will need to install the [Docker Engine](https://docs.docker.com/install/linux/docker-ce/ubuntu/). Follow the instructions (Ubuntu). 
 
-# The environment
+You might also want to install [Docker-Compose](https://docs.docker.com/compose/install/). It is not necessary, but highly recommended. If you decide to take the hard path and go without docker-compose you will need to skim through the next part and launch the services manually.
 
+
+# Docker-Compose
+
+[Rocket.chat github](https://github.com/RocketChat/Rocket.Chat/blob/develop/docker-compose.yml) provides us with a template. Docker-compose [file-reference](https://docs.docker.com/compose/compose-file/compose-file-v2/) could prove useful.
+
+Rocket.Chat docker-compose.yml contains multiple named services and their required parameters, mount paths etc.
+
+You should be able to run this compose file with docker-compose -d up. It will run the containers in a specified order based on the depends_on attributes.
+
+This will leave us in the following situation.
+![]({{ "/images/4/overview-2.png" | absolute_url }})
 
 # SSL certificates
 
@@ -31,7 +43,7 @@ We would be using commercial certificates to prove our services identity if we c
 
 Self-Signed Certificates work just as well, as long as you can trust the certificate. The negative side is that there is no one to publicly announce:
 
-> Hey, this domain name holds a certificate <certificate> and the one served to you seems to match it! You can trust this service!
+> Hey, this domain name holds a certificate "certificate" and the one served to you seems to match it! You can trust this service!
 
 We can generate our own certificate using OpenSSL software.
 
@@ -50,9 +62,10 @@ modify it to meet your own needs. It might help you if you saved these files to 
 Check the permissions for the certificates private key. Who should be able to do what with it?
 Do the same thing for the public key.
 
-[https://wiki.openssl.org/index.php/Diffie_Hellman](Diffie-Hellman Algorithm) Generate it.
+[Diffie-Hellman Algorithm](https://wiki.openssl.org/index.php/Diffie_Hellman) Generate it. 
 
-* NGINX
+# NGINX
+
 We will use NGINX as a [reverse proxy](https://en.wikipedia.org/wiki/Reverse_proxy) for our service. It's not absolutely necessary yet, but it it will be crucial later in this project.
 
 To configure NGINX create a configuration file whatever.conf. Yet again for the sake of your own mind, just save it somewhere you can remember.
@@ -90,14 +103,7 @@ nginx.conf
         }
     }
 ```
-
 Previous snippet will enable your server to listen on port 443 for connections. It will also determine where NGINX will write it's error logs. On top of this it has lots of arguments for SSL connection, including your certification path. More information can be found at [NGINX documentation](https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/). It also specifies a proxy pass for location "/". This means that all the requests ending in "https://rooturl/" will be redirected to the address specified in proxy_pass attribute. More information can be found [here](https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/).
 
+[NGINX documentation](https://nginx.org/en/docs/http/configuring_https_servers.html) contains more information.
 
-# Docker-Compose
-
-[Rocket.chat github](https://github.com/RocketChat/Rocket.Chat/blob/develop/docker-compose.yml) provides us with a template. Docker-compose [file-reference](https://docs.docker.com/compose/compose-file/compose-file-v2/) could prove useful.
-
-Rocket.Chat docker-compose.yml contains multiple named services and their required parameters, mount paths etc.
-
-You should be able to run this compose file with docker-compose -d up. It will run the containers in a specified order based on the depends_on attributes.
