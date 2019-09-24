@@ -126,4 +126,22 @@ if we run `docker-compose up -d` now, we will have following situation:
 
 # Scaling
 
-We can scale the service similarly as in the exercise 2.5. Do that. Make sure it works. You can pause containers using `docker pause <container>`.
+We can scale the service similarly as in the exercise 2.5. Do that. 
+Now we need to tell nginx that we want it to distribute the incoming connections between the rocket.chat containers. 
+
+Modify the NGINX configuration file like so:
+
+```
+upstream rocket {
+    server rocketchat:3000;
+}
+server {
+    ...
+    location / {
+        proxy_pass http://rocket/;
+        ...
+    }
+}
+```
+
+Make sure it works. You can pause containers using `docker pause <container>`. 
