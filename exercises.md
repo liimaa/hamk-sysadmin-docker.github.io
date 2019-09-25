@@ -19,7 +19,7 @@ order: 1
 
 ## Part 1, Basics ##
 
-Part 1 exercise was created by [Jami Kousa](https://github.com/jakousa) 
+Part 1 exercises were created by [Jami Kousa](https://github.com/jakousa) 
 
 ### 1.1 ###
 
@@ -125,6 +125,7 @@ Explain what you created and publish it to Docker Hub.
 
 
 ## Part 2, docker-compose ##
+Part 2 exercises were created by [Jami Kousa](https://github.com/jakousa) and [Sasu Mäkinen](https://github.com/sasumaki)
 
 *Do not alter the code of the projects, unless by pull-requests to the original projects*
 
@@ -167,7 +168,7 @@ Application should be accessible through <http://localhost:3000>. However it doe
 This exercise was created with [Sasu Mäkinen](https://github.com/sasumaki)
 
 
-### 2.9 ### 
+### 2.5 ### 
 
 Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image documentations (postgres) to help you with the task. You may do the same for redis as well.
 
@@ -199,7 +200,6 @@ Submit the docker-compose.yml
 
 ### 3.1 ###
 
-<b style="color:firebrick;">This exercise is mandatory</b>
 
 Security issues with the user being a root are serious for the example frontend and backend as the containers for web services are supposed to be accessible through the internet.
 
