@@ -44,7 +44,7 @@ Can optimize images sizes and security for production.
 Knows why docker-compose is not an optimal production solution and what is.
 
 	
-Part 4 Rocket.Chat
+Part 4
 
 We will do an assignment where we go through the all topics of course
 
