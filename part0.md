@@ -22,11 +22,9 @@ The course material is written for Ubuntu, so some instructions may lack platfor
 
 ### Completing course ###
 
-The course is composed of x parts, first of which is part 0 and contains the pre-requisites for all the upcoming exercises. The parts should take 5-25 hours each to complete.
+The course is composed of 4 parts, first of which is part 0 and contains the pre-requisites for all the upcoming exercises. The parts should take 5-25 hours each to complete.
 
-This forked Course is only for self learning and being part of normal university education. If you are interested to get credits we recommend Helsinki university course <https://courses.helsinki.fi/en/aytkt21025en/129059389> /  <https://docker-hy.github.io/>
-
-
+This forked Course is only for self learning and being part of normal university education. If you are interested to get MOOC credits we recommend Helsinki university course <https://courses.helsinki.fi/en/aytkt21025en/129059389> /  <https://docker-hy.github.io/>
 
 
 ### Learning objectives ###
@@ -44,6 +42,11 @@ Part 3
 
 Can optimize images sizes and security for production.
 Knows why docker-compose is not an optimal production solution and what is.
+
+	
+Part 4 Rocket.Chat
+
+We will do an assignment where we go through the all topics of course
 
 
 ## Installing Docker ##
@@ -75,4 +78,3 @@ Confirm that docker-compose installed correctly by opening a terminal and runnin
 
 Do the first exercise over **[here](/exercises/#part-0)**
 
-### Mistakes: ###
