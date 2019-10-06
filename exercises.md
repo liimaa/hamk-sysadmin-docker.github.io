@@ -194,6 +194,7 @@ Submit the docker-compose.yml
 
 
 # Part 3, Security
+Part 3 exercises were created by [Jami Kousa](https://github.com/jakousa) 
 
 
 ### 3.1 ###
