@@ -6,7 +6,7 @@ permalink: /rocketchat/
 order: 0
 ---
 
-This part is subject to change.
+This was created by [Joni Virtanen](https://github.com/jonivirtanen) 
 
 # The goal
 
