@@ -64,7 +64,7 @@ Confirm that Docker installed correctly by opening a terminal and running `docke
 
 ## Installing docker-compose ##
 
-During the writing of these materials, both MacOS and Windows have docker-compose included in their respective Docker packages.
+During the writing of these materials, MacOS has a docker-compose included in their respective Docker package.
 
 Use the official documentation to find download instructions for docker-compose for the platform of your choice:
 
