@@ -6,14 +6,6 @@ permalink: /part1/
 order: 0
 ---
 
-## What is DevOps?
-
-DevOps is a term consisting of two parts, *Dev* and *Ops*. *Dev* refers to the development of software and *Ops* to operations. The concept DevOps has many definitions, but in practice it means that the release, configuring, and monitoring of a software is in the hands of the very people who develop it. A more formal definition is offered by [Jabbari et al.](https://dl.acm.org/citation.cfm?id=2962707): "DevOps is a development methodology aimed at bridging the gap between Development and Operations, emphasizing communication and collaboration, continuous integration, quality assurance and delivery with automated deployment utilizing a set of development practices". 
-
-![]({{ "https://upload.wikimedia.org/wikipedia/commons/0/05/Devops-toolchain.svg" | absolute_url }})
-
-Image of devops toolchain by Kharnagy from [wikipedia](https://commons.wikimedia.org/wiki/File:Devops-toolchain.svg)
-
 ## What is Docker? 
 
 Applications are often developed and tested on one machine. This leads to a problem more commonly known as "works on my machine", where the developer does not know why or how the application does not work on a different machine. In addition, different parts of a system may change over time, possibly leading to the application not working. These changes may be anything from an operating system update to changes in dependencies, or even hardware changes.
