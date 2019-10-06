@@ -6,7 +6,7 @@ permalink: /exercises/
 order: 1
 ---
 
-[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3)
+[Part 1](#part-1) [Part 2](#part-2) [Part 3](#part-3)[Part 4](#part-4)
 
 
 
@@ -194,6 +194,7 @@ Submit the docker-compose.yml
 
 
 # Part 3, Security
+Part 3 exercises were created by [Jami Kousa](https://github.com/jakousa) 
 
 
 ### 3.1 ###
