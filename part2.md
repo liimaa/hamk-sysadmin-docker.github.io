@@ -5,7 +5,6 @@ inheader: yes
 permalink: /part2/
 order: 0
 ---
-Created by [Jami Kousa](https://github.com/jakousa) 
 
 # docker-compose 
 
