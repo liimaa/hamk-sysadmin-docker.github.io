@@ -46,7 +46,7 @@ Knows why docker-compose is not an optimal production solution and what is.
 	
 Part 4
 
-We will do an assignment where we go through the all topics of course
+We will do an assignment where we go through the all topics of course.
 
 
 ## Installing Docker ##
