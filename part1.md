@@ -622,7 +622,7 @@ The `docker port` command can be used to list the port mappings for a container:
 
 You can also limit connections to certain protocol only, in this case udp by adding the protocol at the end: `EXPOSE 4567/udp` and `-p 1234:4567/udp` respectively.
 
-**[Do exercises 1.9 - 1.12](/exercises/#19)**
+**[Do exercises 1.9](/exercises/#19)**
 
 ### Publishing projects in Docker Hub
 
@@ -646,7 +646,7 @@ Pushing should now work without problems:
 
 `docker push <username>/<repositoryname>`
 
-**[Do exercises 1.13 - 1.17](/exercises/#113)**
+**[Do exercises 1.10](/exercises/#110)**
 
 ## Epilogue, or rather, a recap ##
 
