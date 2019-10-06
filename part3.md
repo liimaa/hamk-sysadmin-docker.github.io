@@ -186,7 +186,7 @@ ca-certificates openssl
 
 and this brings us to 36.4 megabytes in our `RUN` layer (from the original 87.4 megabytes). 
 
-**[Do exercises 3.1 and 3.2](/exercises/#31)**
+**[Do exercises 3.1](/exercises/#31)**
 
 ## Using a non-root user ##
 
@@ -233,7 +233,6 @@ ERROR: unable to open for writing: [Errno 13] Permission denied: 'Imgur-JY5tHqr.
 
 We'll see that our `app` user can not write to `/app` - this can be fixed with `chown` or not fix it at all, if the intented usage is to always have a `/app` mounted from the host.  
 
-**[Do exercise 3.3](/exercises/#33)**
 
 ## Alpine Linux variant ##
 
@@ -302,54 +301,8 @@ OR, if we don't want to upkeep the ubuntu version anymore we can replace our Ubu
 
 Also remember that unless specified the `:latest` tag will always just refer to the latest image build & pushed - that can basically contain anything. 
 
-**[Do exercise 3.4](/exercises/#34)**
+**[Do exercise 3.2](/exercises/#32)**
 
-## Multi-stage builds ##
-
-Multi-stage builds are useful when you need some tools just for the build but not for the execution of the image CMD. This is an easy way to reduce size in some cases.
-
-Let's create a website with Jekyll, build the site for production and serve the static files with nginx.
-Start by creating the recipe for Jekyll to build the site.
-
-```
-FROM ruby
-
-WORKDIR /usr/app
-
-RUN gem install jekyll
-RUN jekyll new .
-RUN jekyll build
-```
-
-This creates a new Jekyll application and builds it. We could start thinking about optimizations at this point but instead we're going add a new FROM for nginx, this is what resulting image will be. And copy the built static files from the ruby image to our nginx image.
-
-```
-FROM ruby as build-stage
-...
-FROM nginx
-
-COPY --from=build-stage /usr/app/_site/ /usr/share/nginx/html
-```
-
-This copies contents from the first image `/usr/app/_site/` to `/usr/share/nginx/html` Note the naming from ruby to build-stage. We could also use external image as a stage, `--from=python:3.7` for example. Lets build and check the size difference:
-
-```
-$ docker build . -t jekyll
-$ docker images
-REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
-jekyll              latest              5f8839505f37        37 seconds ago      109MB
-ruby                latest              616c3cf5968b        28 hours ago        870MB
-```
-
-As you can see, even though our jekyll image needed ruby during the build process, its considerably smaller since it only has nginx and the static files. `docker run -it -p 8080:80 jekyll` also works as expected.
-
-**[Do exercises 3.5 and 3.6](/exercises/#35)**
-
-## A peek into multi-host environment options ##
-
-Now that we've mastered containers in small systems with docker-compose it's time to look beyond what the tools we practiced are capable of. In situations where we have more than a single host machine we cannot use docker-compose solely. However, Docker does contain other tools to help us with automatic deployment, scaling and management of dockerized applications.
-
-For the scope of this course we cannot go into how to use the tools in this section, but leaving them out would be a disservice.
 
 **Docker swarm** is built into docker. It turns a pool of Docker hosts into a single virtual host. You can read the feature highlights [here](https://docs.docker.com/engine/swarm/). You can run right away with `docker swarm`. Docker swarm is the lightest way of utilizing multiple hosts.
 
@@ -358,13 +311,3 @@ For the scope of this course we cannot go into how to use the tools in this sect
 The main difference you should take is that the tools are at their best in different situations. In a 2-3 host environment for a hobby project the gains from Kubernetes might not be as large compared to a environment where you need to orchestrate hundreds of hosts with multiple containers each.
 
 But with the technology and tools being as new as they are, their popularity might fluctuate as well leading to deprecation of certain tools. A tool called docker stack has been available for a while as a way to replace docker-compose as a baked-in-to-Docker way to do the same things, with built in Kubernetes and Docker Swarm support. You can also start testing this by running `docker stack`.
-
-![]({{ "/images/3/stack.png" | absolute_url }})
-
-Translation:
-
-Luukkainen: "Is docker stack the bleeding edge?"
-
-[Paksula](/#credits): "Deprecated"
-
-**[Do exercises 3.7 and 3.8](/exercises/#37)**
