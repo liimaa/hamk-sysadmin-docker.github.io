@@ -1,10 +1,11 @@
 ---
 layout: page
 title: Part 3
-inheader: no
+inheader: yes
 permalink: /part3/
 order: 0
 ---
+Created by [Jami Kousa](https://github.com/jakousa)
 
 # Deeper understanding of Docker
 

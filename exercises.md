@@ -149,8 +149,6 @@ Submit the docker-compose.yml, make sure that it works simply by running `docker
 
 ### 2.3 ###
 
-<b style="color:firebrick;">This exercise is mandatory</b>
-
 As we saw previously, starting an application with two programs was not trivial and the commands got a bit long.
 
 Since we already created working Dockerfiles for both frontend and backend we can go step further and simplify the usage into one docker-compose.yml.
