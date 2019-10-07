@@ -1,8 +1,8 @@
 ---
 layout: page
-title: Rocket.Chat
+title: Part 4
 inheader: yes
-permalink: /rocketchat/
+permalink: /part4/
 order: 0
 ---
 
