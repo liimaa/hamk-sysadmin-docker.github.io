@@ -139,6 +139,8 @@ Create a docker-compose.yml file that starts `devopsdockeruh/first_volume_exerci
 
 Submit the docker-compose.yml, make sure that it works simply by running `docker-compose up`
 
+
+
 ### 2.2 ###
 
 `devopsdockeruh/ports_exercise` starts a web service that will answer in port `80`
@@ -149,24 +151,15 @@ Submit the docker-compose.yml, make sure that it works simply by running `docker
 
 ### 2.3 ###
 
-As we saw previously, starting an application with two programs was not trivial and the commands got a bit long.
-
-Since we already created working Dockerfiles for both frontend and backend we can go step further and simplify the usage into one docker-compose.yml.
-
-Configure the backend and frontend from part 1 to work in docker-compose.
-
-Submit the docker-compose.yml
-
-### 2.4 ###
-
 A project over at <https://github.com/docker-hy/scaling-exercise> has a hardly working application. Go ahead and clone it for yourself. The project already includes docker-compose.yml so you can start it by running `docker-compose up`.
 
 Application should be accessible through <http://localhost:3000>. However it doesn't work well enough and I've added a load balancer for scaling. Your task is to scale the `compute` containers so that the button in the application turns green.
 
 This exercise was created with [Sasu Mäkinen](https://github.com/sasumaki)
 
+``` git clone ``` clones repositories.
 
-### 2.5 ### 
+### 2.4 ### 
 
 Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image documentations (postgres) to help you with the task. You may do the same for redis as well.
 
