@@ -122,7 +122,7 @@ services:
         - VARIABLE 
 ```
 
-**[Do exercises 2.2 and 2.3](/exercises/#22)**
+**[Do exercises 2.2](/exercises/#22)**
 
 #### Scaling
 
@@ -270,7 +270,7 @@ Now we have a basic single machine hosting setup up and running.
 
 Test updating the `hello.html` without restarting the container, does it work? 
 
-**[Do exercise 2.4](/exercises/#24)**
+**[Do exercise 2.3](/exercises/#23)**
 
 # Docker networking 
 
