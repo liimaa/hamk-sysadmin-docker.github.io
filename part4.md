@@ -45,7 +45,7 @@ Self-Signed Certificates work just as well, as long as you can trust the certifi
 
 > Hey, this domain name holds a certificate "certificate" and the one served to you seems to match it! You can trust this service!
 
-We can generate our own certificate using OpenSSL software.
+We can generate our own certificate using OpenSSL software. For this material, you may want to create the certificate on the host. If you create the certificate inside the container, you will have to adapt your system accordingly.
 
 > openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/nginx/certificate.key -out /etc/nginx/certificate.crt
 
@@ -62,7 +62,8 @@ modify it to meet your own needs. It might help you if you saved these files to 
 Check the permissions for the certificates private key. Who should be able to do what with it?
 Do the same thing for the public key.
 
-[Diffie-Hellman Algorithm](https://wiki.openssl.org/index.php/Diffie_Hellman) Generate it. 
+[Diffie-Hellman Algorithm](https://wiki.openssl.org/index.php/Diffie_Hellman) Generate it.
+```openssl dhparam 2048 -out <polku>/dhparam.pem```
 
 # NGINX
 
@@ -76,7 +77,7 @@ nginx.conf
 ```
     server {
         listen 443 ssl;
-        server name localhost;
+        server_name localhost;
 
         error_log /var/log/nginx/rocketchat_error.log;
 
@@ -90,7 +91,7 @@ nginx.conf
         ssl_session_timeout 180m;
 
         location / {
-            proxy_pass localhost:3000;
+            proxy_pass rocketchat:3000;
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
@@ -118,6 +119,8 @@ services:
     - <certificates mount>
     ports:
     - "443:443"
+    depends_on:
+    - rocketchat
 ```
 
 if we run `docker-compose up -d` now, we will have following situation:
