@@ -91,7 +91,7 @@ nginx.conf
         ssl_session_timeout 180m;
 
         location / {
-            proxy_pass rocketchat:3000;
+            proxy_pass http://rocketchat:3000;
             proxy_http_version 1.1;
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
