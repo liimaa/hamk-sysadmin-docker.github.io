@@ -13,7 +13,7 @@ order: 1
 ## Part 0 ##
 
 
-
+Docker documentation is available at [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
 
 
 
@@ -83,7 +83,12 @@ This time return the command you used to start process and the command(s) you us
 
 Create a Dockerfile that starts with `FROM devopsdockeruh/overwrite_cmd_exercise` and works only as a clock.
 
-The developer has poorly documented how the application works. Passing flags will open different functionalities, but we'd like to create a simplified version of it.
+The developer has poorly documented how the application works. Passing flags will open different functionalities, but we'd like to create a simplified version of it. You can view flags from [github repo](https://github.com/docker-hy/overwrite_cmd_exercise) or by passing empty CMD to Dockerfile, like so.
+
+```
+FROM ...
+CMD []
+```
 
 Add a CMD line to the Dockerfile and tag it as "docker-clock" so that `docker run docker-clock` starts the application and the clock output.
 
