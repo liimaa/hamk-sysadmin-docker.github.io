@@ -161,7 +161,7 @@ This exercise was created with [Sasu Mäkinen](https://github.com/sasumaki)
 
 ### 2.4 ### 
 
-Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image documentations (postgres) to help you with the task. You may do the same for redis as well.
+Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image [documentations(postgres)](https://hub.docker.com/_/postgres) to help you with the task. You may do the same for redis as well.
 
 After you have configured the volume:
 
