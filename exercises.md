@@ -40,7 +40,7 @@ Prove that you have completed this part of exercise by delivering the output for
 
 ### 1.3 ###
 
-Start image `devopsdockeruh/pull_exercise` with flags `-it` like so: `docker run -it devopsdockeruh/pull_exercise`. It will wait for your input. Navigate through docker hub to find the docs and Dockerfile that was used to create the image.
+Start image `devopsdockeruh/pull_exercise` with flags `-it` like so: `docker run -it devopsdockeruh/pull_exercise`. It will wait for your input. Navigate through [docker hub] (https://hub.docker.com/r/devopsdockeruh/pull_exercise) to find the docs and Dockerfile that was used to create the image.
 
 Read the Dockerfile and/or docs to learn what input will get the application to answer a "secret message".
 
