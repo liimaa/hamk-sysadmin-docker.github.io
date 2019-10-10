@@ -90,7 +90,7 @@ FROM ...
 CMD []
 ```
 
-Add a CMD line to the Dockerfile and tag it as "docker-clock" so that `docker run docker-clock` starts the application and the clock output.
+Add a CMD line to the Dockerfile and tag it as "docker-clock" so that `docker run docker-clock` starts the application and the clock output. You will need to use [Docker run reference](https://docs.docker.com/engine/reference/run/)
 
 ### 1.7 ### 
 
