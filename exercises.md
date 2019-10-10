@@ -12,7 +12,7 @@ order: 1
 
 ## Intro
 
-Remember to start reading from **[here](/exercises/#part-0)** before starting to do exercises
+Remember to start reading from **[here](https://hamk-sysadmin-docker.github.io/part0/)** before starting to do exercises.
 
 Docker documentation is available at [https://docs.docker.com/engine/reference/run/](https://docs.docker.com/engine/reference/run/)
 
