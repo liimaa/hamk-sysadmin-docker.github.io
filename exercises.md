@@ -211,7 +211,7 @@ Document the image size before the changes.
 
 Rather than going to FROM alpine or scratch, lets go look into [docker-node](https://github.com/nodejs/docker-node) and we should find a way how to run a container that has everything pre-installed for us. Theres even a [best practices guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 
-Return back to our frontend & backend Dockerfiles and change the FROM to something more suitable. Make sure the application still works after the changes.
+Return back to our Youtube exercise (First docker-compose.yml) and change the FROM to something more suitable. Make sure the application still works after the changes.
 
 Document the size after this change. If you used the alpine version the size for frontend can be less than 250MB. The backend can be below 150MB.
 
