@@ -167,7 +167,7 @@ This exercise was created with [Sasu Mäkinen](https://github.com/sasumaki)
 
 ### 2.4 ### 
 
-Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image [documentations(postgres)](https://hub.docker.com/_/postgres) to help you with the task. You may do the same for redis as well.
+Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image [documentations(postgres)](https://hub.docker.com/_/postgres) to help you with the task.
 
 After you have configured the volume:
 
@@ -199,9 +199,7 @@ Part 3 exercises were created by [Jami Kousa](https://github.com/jakousa)
 ### 3.1 ###
 
 
-Security issues with the user being a root are serious for the example frontend and backend as the containers for web services are supposed to be accessible through the internet.
-
-Make sure the containers start their processes as a non-root user.
+Security issues with the user being a root are serious for the example frontend and backend as the containers for web services are supposed to be accessible through the internet. Return back to *Optimizing the Dockerfile* and make sure the containers start their processes as a non-root user.
 
 > TIP `man chown` may help you if you have access errors
 
@@ -211,7 +209,7 @@ Document the image size before the changes.
 
 Rather than going to FROM alpine or scratch, lets go look into [docker-node](https://github.com/nodejs/docker-node) and we should find a way how to run a container that has everything pre-installed for us. Theres even a [best practices guide](https://github.com/nodejs/docker-node/blob/master/docs/BestPractices.md)
 
-Return back to our frontend & backend Dockerfiles and change the FROM to something more suitable. Make sure the application still works after the changes.
+Return back to our Youtube exercise (First docker-compose.yml) and change the FROM to something more suitable. Make sure the application still works after the changes.
 
 Document the size after this change. If you used the alpine version the size for frontend can be less than 250MB. The backend can be below 150MB.
 
