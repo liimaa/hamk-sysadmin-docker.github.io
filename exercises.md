@@ -167,7 +167,7 @@ This exercise was created with [Sasu Mäkinen](https://github.com/sasumaki)
 
 ### 2.4 ### 
 
-Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image [documentations(postgres)](https://hub.docker.com/_/postgres) to help you with the task. You may do the same for redis as well.
+Postgres image uses volume by default. Manually define volumes for the database in convenient location such as in `./database` . Use the image [documentations(postgres)](https://hub.docker.com/_/postgres) to help you with the task.
 
 After you have configured the volume:
 
@@ -199,9 +199,7 @@ Part 3 exercises were created by [Jami Kousa](https://github.com/jakousa)
 ### 3.1 ###
 
 
-Security issues with the user being a root are serious for the example frontend and backend as the containers for web services are supposed to be accessible through the internet.
-
-Make sure the containers start their processes as a non-root user.
+Security issues with the user being a root are serious for the example frontend and backend as the containers for web services are supposed to be accessible through the internet. Return back to *Optimizing the Dockerfile* and make sure the containers start their processes as a non-root user.
 
 > TIP `man chown` may help you if you have access errors
 
