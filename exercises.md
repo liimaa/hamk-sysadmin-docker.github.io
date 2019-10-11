@@ -97,7 +97,7 @@ Add a CMD line to the Dockerfile and tag it as "docker-clock" so that `docker ru
 
 Now that we know how to create and build Dockerfiles we can improve previous works.
 
-Make a script file for `echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;` and run it inside the container using CMD. Build the image with tag "curler".
+Make a .sh script file for `echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;` and run it inside the container using CMD.
 
 Run command `docker run [options] curler` (with correct flags again, as in 1.5) and input helsinki.fi into it. Output should match the 1.5 one.
 
